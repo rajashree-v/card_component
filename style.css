@@ -1,0 +1,128 @@
+@import url("https://fonts.cdnfonts.com/css/artico");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+* {
+  font-family: "Artico", sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.card_cont {
+  perspective: 1000px;
+  width: 350px;
+  height: 250px;
+  margin: 100px auto;
+}
+.card {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+.card_cont:hover .card {
+  transform: rotateY(180deg);
+}
+.frontcard,
+.backcard {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.frontcard {
+  background-color: white;
+  padding: 20px;
+}
+.frontcard img {
+  height: 75px;
+  width: 200px;
+  margin: 65px auto;
+  display: block;
+  max-width: 80%;
+}
+
+.backcard {
+  position: relative;
+  padding: 2px;
+  border-radius: 15px;
+  background: #833ab4;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 34%,
+    rgba(252, 176, 69, 1) 61%,
+    rgba(227, 137, 11, 1) 90%
+  );
+  animation: flow-border 3s linear infinite;
+  transform: rotateY(180deg);
+  background-size: 300% 300%;
+}
+.backcard_content {
+  background-color: black;
+  color: white;
+  border-radius: 13px;
+  padding: 16px 20px 12px 20px;
+  overflow: auto;
+  height: 100%;
+  text-align: left;
+}
+
+.name {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: cyan;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+.description {
+  color: azure;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.button {
+  padding: 6px 12px;
+  border: 1px solid cornflowerblue;
+  background-color: aquamarine;
+  color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.button:hover {
+  background-color: blue;
+  color: white;
+  border-color: wheat;
+}
+.frontcard:hover {
+  transform: rotateY(180deg);
+}
+@keyframes flow-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
